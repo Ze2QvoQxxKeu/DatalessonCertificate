@@ -20,7 +20,7 @@ namespace DatalessonCertificate
     {
         private static readonly List<string> ФайлКонфигурации = new List<string>
         {
-            @"https://raw.githubusercontent.com/Ze2QvoQxxKeu/DatalessonCertificate/main/[CONFIG]",
+            @"https://raw.githubusercontent.com/Ze2QvoQxxKeu/DatalessonCertificate/master/[CONFIG]",
             @"https://pastebin.com/raw/hKCZjndf"
         };
         public static readonly string СайтПрограммы = @"https://github.com/Ze2QvoQxxKeu/DatalessonCertificate";
