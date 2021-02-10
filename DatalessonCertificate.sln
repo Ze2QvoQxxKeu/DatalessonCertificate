@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatalessonCertificate", "DatalessonCertificate.csproj", "{FCDFF96F-59A1-4940-B4E6-4D69D7E32733}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCDFF96F-59A1-4940-B4E6-4D69D7E32733}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCDFF96F-59A1-4940-B4E6-4D69D7E32733}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCDFF96F-59A1-4940-B4E6-4D69D7E32733}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCDFF96F-59A1-4940-B4E6-4D69D7E32733}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D92C00F-DDEC-40A4-BE5A-DD3352B5354E}
+	EndGlobalSection
+EndGlobal
