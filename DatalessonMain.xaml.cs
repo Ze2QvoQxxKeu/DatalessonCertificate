@@ -75,7 +75,7 @@ namespace DatalessonCertificate
                 {
                     НазваниеУрока.Items.Clear();
                     Уроки.Clear();
-                    MessageBox.Show($"Ошибка загрузки файла конфигурации.\n{error}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Ошибка загрузки конфигурации.\n{error}\nПерезапустите программу, либо попробуйте сделать это поздже.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
                     НазваниеУрока.SelectedIndex = НазваниеУрока.Items.Count - 1;
