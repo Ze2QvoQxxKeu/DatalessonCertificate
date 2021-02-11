@@ -348,7 +348,7 @@
             <RowDefinition Height="33"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-        <DockPanel x:Name="ЗаголовокОкна" HorizontalAlignment="Left" Height="25" LastChildFill="False" VerticalAlignment="Top" Width="378" Grid.Row="0" MouseLeftButtonDown="ЗаголовокОкна_MouseLeftButtonDown">
+        <DockPanel x:Name="ЗаголовокОкна" Height="25" LastChildFill="False" Width="378" Grid.Row="0" MouseLeftButtonDown="ЗаголовокОкна_MouseLeftButtonDown" VerticalAlignment="Top">
             <DockPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
