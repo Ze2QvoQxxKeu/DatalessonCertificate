@@ -387,7 +387,7 @@
                 <ColumnDefinition Width="145*"/>
             </Grid.ColumnDefinitions>
             <Label Content="Имя" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" Height="23" FontSize="13" FontFamily="{StaticResource CustomFont}" FontWeight="Bold" VerticalAlignment="Top" />
-            <Label Content="Урок" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="1,28,0,0" Width="47" Foreground="White" Height="23" FontSize="13" FontFamily="{DynamicResource CustomFont}" FontWeight="Bold"/>
+            <Label Content="Урок" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="0,28,0,0" Foreground="White" Height="23" FontSize="13" FontFamily="{DynamicResource CustomFont}" FontWeight="Bold"/>
             <TextBox x:Name="ИмяПользователя" VerticalContentAlignment="Center" Height="23" TextWrapping="NoWrap" Foreground="Black" Background="#FF146A94" FontSize="13" SelectionTextBrush="White" SelectionBrush="#FF2E3192" TextAlignment="Center" Grid.Column="1" FontFamily="{StaticResource CustomFont}" VerticalAlignment="Top"/>
             <ComboBox x:Name="НазваниеУрока" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,28,0,0"  Height="23" Foreground="Black" FontSize="13" Background="#FF146A94" IsSynchronizedWithCurrentItem="True" Style="{DynamicResource ComboBoxStyle1}" ItemContainerStyle="{DynamicResource ComboBoxItemStyle1}" Grid.Column="1" FontFamily="{StaticResource CustomFont}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="316">
                 <ComboBox.Resources>
