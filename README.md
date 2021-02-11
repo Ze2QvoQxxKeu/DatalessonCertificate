@@ -4,7 +4,7 @@
 
 ![Внешний вид программы](https://user-images.githubusercontent.com/17485135/107594374-385dd880-6c2b-11eb-81d0-9e9f85d7e4fe.png "Внешний вид программы")s
 
-##### Актуальную версию **[1.0.0.0](https://github.com/Ze2QvoQxxKeu/DatalessonCertificate/releases/tag/v1.0.0.0 "Актуальная версия")** можно скачать **[здесь](https://github.com/Ze2QvoQxxKeu/DatalessonCertificate/releases/download/v1.0.0.0/DatalessonCertificate.exe "Скачать последнюю версию программы")**. 
+### Актуальную версию **[1.0.0.0](https://github.com/Ze2QvoQxxKeu/DatalessonCertificate/releases/tag/v1.0.0.0 "Актуальная версия")** можно скачать **[здесь](https://github.com/Ze2QvoQxxKeu/DatalessonCertificate/releases/download/v1.0.0.0/DatalessonCertificate.exe "Скачать последнюю версию программы")**. 
 
 ## Приступая к работе
 
