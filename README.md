@@ -19,7 +19,7 @@
 
 **Программе для работы требуется [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48 "Домашняя страница (English)").**
 
-Узнать что такое `.NET Framework` можно в [Википедии](https://ru.wikipedia.org/wiki/.NET_Framework ".NET Framework ⎮ Материал из Википедии — свободной энциклопедии")
+Узнать что такое `.NET Framework` можно в [Википедии](https://ru.wikipedia.org/wiki/.NET_Framework ".NET Framework &#124; Материал из Википедии — свободной энциклопедии")
 
 Не торопитесь скачивать, возможно, он уже установлен в системе - скачайте программу, если запустится, то  устанавливать ничего дополнительно не нужно.
 
