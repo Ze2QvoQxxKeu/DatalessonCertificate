@@ -2,9 +2,18 @@
 
 Программа для получения сертификатов о прохождении уроков с сайта [УрокЦифры.РФ](https://УрокЦифры.РФ/ "УрокЦифры.РФ") без фактического их прохождения
 
-![Внешний вид программы](https://user-images.githubusercontent.com/17485135/107594374-385dd880-6c2b-11eb-81d0-9e9f85d7e4fe.png "Внешний вид программы")s
+![Внешний вид программы](https://user-images.githubusercontent.com/17485135/107594374-385dd880-6c2b-11eb-81d0-9e9f85d7e4fe.png "Внешний вид программы")
 
-### Актуальную версию **[1.0.0.0](https://github.com/Ze2QvoQxxKeu/DatalessonCertificate/releases/tag/v1.0.0.0 "Актуальная версия")** можно скачать **[здесь](https://github.com/Ze2QvoQxxKeu/DatalessonCertificate/releases/download/v1.0.0.0/DatalessonCertificate.exe "Скачать последнюю версию программы")**. 
+##### Список доступных уроков (обновляется):
+* [Большие данные](https://урокцифры.рф/lessons/bolshie-dannye "Открыть урок")
+* [Сети и облачные технологии](https://урокцифры.рф/lessons/seti-i-oblachnye-tehnologii "Открыть урок")
+* [Персональные помощники](https://урокцифры.рф/lessons/personalnye-pomoshhniki "Открыть урок")
+* [Безопасность будущего](https://урокцифры.рф/lessons/bezopasnost-budushhego "Открыть урок")
+* [Искусственный интеллект и машинное обучение](https://урокцифры.рф/lessons/ii-i-algoritmy-prinjatija-reshenij "Открыть урок")
+* [Нейросети и коммуникации](https://урокцифры.рф/lessons/neural-networks-and-communications "Открыть урок")
+* [Приватность в цифровом мире](https://урокцифры.рф/lessons/cybersecurity "Открыть урок")
+
+### Актуальную версию **[1.1.0.0](https://github.com/Ze2QvoQxxKeu/DatalessonCertificate/releases/tag/v1.1.0.0 "Актуальная версия")** можно скачать **[здесь](https://github.com/Ze2QvoQxxKeu/DatalessonCertificate/releases/download/v1.1.0.0/DatalessonCertificate.exe "Скачать последнюю версию программы")**. 
 
 ## Приступая к работе
 
