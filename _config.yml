@@ -1,1 +1,17 @@
+title:        "DatalessonCertificate"
+description:  "Программа для получения сертификатов о прохождении уроков с сайта УрокЦифры.РФ без фактического их прохождения"
+image: https://user-images.githubusercontent.com/17485135/107755662-929a8e80-6d3c-11eb-8fc2-112d358294e6.png
+tagline:      "DatalessonCertificate | Сертификаты - УрокЦифры.РФ"
+baseurl:      ""
+paginate:     1
+weburl:       https://DatalessonCertificate.github.io
+
+author:
+  name:       HEX0x29A
+  url:        https://github.com/Ze2QvoQxxKeu
+
+gems:
+  - jekyll-target-blank
+
+email: DatalessonCertificate@mail.ru
 theme: jekyll-theme-hacker
