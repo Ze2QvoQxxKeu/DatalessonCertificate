@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
+#pragma warning disable IDE1006 // Стили именования
 namespace DatalessonCertificate
 {
     public partial class DatalessonMain : Window
@@ -23,7 +24,7 @@ namespace DatalessonCertificate
             @"https://raw.githubusercontent.com/Ze2QvoQxxKeu/DatalessonCertificate/master/.[CONFIG]",
             @"https://pastebin.com/raw/hKCZjndf"
         };
-        public static readonly string СайтПрограммы = @"https://github.com/Ze2QvoQxxKeu/DatalessonCertificate";
+        public static readonly string СайтПрограммы = @"https://ze2qvoqxxkeu.github.io/DatalessonCertificate/";
         public static readonly string УрокЦифры = @"https://урокцифры.рф/";
         private static string UserAgent
         {
@@ -143,12 +144,14 @@ namespace DatalessonCertificate
 
         private bool GetSaveFileName(ref string FileName)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = GetExePath();
-            saveFileDialog.Filter = "PDF файлы (*.pdf)|*.pdf";
-            saveFileDialog.FilterIndex = 1;
-            saveFileDialog.OverwritePrompt = true;
-            saveFileDialog.FileName = FileName;
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                InitialDirectory = this.GetExePath(),
+                Filter = "PDF файлы (*.pdf)|*.pdf",
+                FilterIndex = 1,
+                OverwritePrompt = true,
+                FileName = FileName,
+            };
             if (saveFileDialog.ShowDialog() == true)
             {
                 FileName = saveFileDialog.FileName;
@@ -158,7 +161,7 @@ namespace DatalessonCertificate
                 return false;
         }
 
-        private static string GetExePath() => Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) +
+        private string GetExePath() => Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) +
             Path.DirectorySeparatorChar;
 
         private bool ParseList(string buffer, ref List<int> list)
@@ -203,3 +206,4 @@ namespace DatalessonCertificate
         }
     }
 }
+#pragma warning restore IDE1006 // Стили именования

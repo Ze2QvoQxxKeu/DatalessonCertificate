@@ -199,36 +199,20 @@ namespace DatalessonCertificate
                             int id_region = RandomListValue(regions), id_city = 0, id_country = 0;
 
                             if (not_from_russia) //Если не из рашки
-                            {
                                 //Парсим страны
-                                response = await client.PostAsync($"https://xn--h1adlhdnlo2c.xn--p1ai/load-countries?rnd={rand.Next()}",
-                                                                    new StringContent(string.Join("&", new Dictionary<string, string>
-                                                                    {
-                                                                    { "_token", _token },
-                                                                    }.Select(x => x.Key + "=" + x.Value).ToArray()),
-                                                                        Encoding.UTF8, "application/x-www-form-urlencoded"));
-                                if (!response.IsSuccessStatusCode)
-                                    throw new Exception(string.Format(SiteTemporaryUnavailable, "урокцифры.рф"));
-                                if (!ParseList(await response.Content.ReadAsStringAsync(), ref countries))
-                                    throw new Exception(MissingData);
-                                id_country = RandomListValue(countries);
-                            }
+                                response = await client.GetAsync($"https://xn--h1adlhdnlo2c.xn--p1ai/load-countries?rnd={rand.Next()}");
                             else //Из рашки
-                            {
                                 //Парсим города
-                                response = await client.PostAsync($"https://xn--h1adlhdnlo2c.xn--p1ai/load-region-cities?rnd={rand.Next()}",
-                                                                    new StringContent(string.Join("&", new Dictionary<string, string>
-                                                                    {
-                                                                    { "id", id_region.ToString() },
-                                                                    { "_token", _token },
-                                                                    }.Select(x => x.Key + "=" + x.Value).ToArray()),
-                                                                        Encoding.UTF8, "application/x-www-form-urlencoded"));
-                                if (!response.IsSuccessStatusCode)
-                                    throw new Exception(string.Format(SiteTemporaryUnavailable, "урокцифры.рф"));
-                                if (!ParseList(await response.Content.ReadAsStringAsync(), ref cities))
-                                    throw new Exception(MissingData);
+                                response = await client.GetAsync($"https://xn--h1adlhdnlo2c.xn--p1ai/load-region-cities?rnd={rand.Next()}" +
+                                                                 $"&id={id_region}&id_city=undefined");
+                            if (!response.IsSuccessStatusCode)
+                                throw new Exception(string.Format(SiteTemporaryUnavailable, "урокцифры.рф"));
+                            if (!ParseList(await response.Content.ReadAsStringAsync(), ref countries))
+                                throw new Exception(MissingData);
+                            if (not_from_russia) //Если не из рашки
+                                id_country = RandomListValue(countries);
+                            else
                                 id_city = RandomListValue(cities);
-                            }
 
                             //Переменные
                             string type = new string[] { "pupil", "parent", "teacher" }[rand.Next(3)];
@@ -305,8 +289,10 @@ namespace DatalessonCertificate
 
         private void Инфо_Click(object sender, RoutedEventArgs e)
         {
-            DatalessonAbout aboutForm = new DatalessonAbout();
-            aboutForm.Owner = this;
+            DatalessonAbout aboutForm = new DatalessonAbout
+            {
+                Owner = this
+            };
             aboutForm.ShowDialog();
         }
 

@@ -13,9 +13,11 @@
 * [Нейросети и коммуникации](https://урокцифры.рф/lessons/neural-networks-and-communications "Открыть урок")
 * [Приватность в цифровом мире](https://урокцифры.рф/lessons/cybersecurity "Открыть урок")
 
-### Актуальную версию **[1.1.0.0](https://github.com/Ze2QvoQxxKeu/DatalessonCertificate/releases/tag/v1.1.0.0 "Актуальная версия")** можно скачать **[здесь](https://github.com/Ze2QvoQxxKeu/DatalessonCertificate/releases/download/v1.1.0.0/DatalessonCertificate.exe "Скачать последнюю версию программы")**. 
+### Актуальную версию **[1.2.0.0](https://github.com/Ze2QvoQxxKeu/DatalessonCertificate/releases/tag/v1.2.0.0 "Актуальная версия")** можно скачать **[здесь](https://github.com/Ze2QvoQxxKeu/DatalessonCertificate/releases/download/v1.2.0.0/DatalessonCertificate.exe "Скачать последнюю версию программы")**. 
 
 ## Приступая к работе
+
+**Необходима операционная система не ниже Windows 7 x86/x64**
 
 **Программе для работы требуется [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48 "Домашняя страница (English)").**
 
@@ -23,7 +25,7 @@
 
 Не торопитесь скачивать, возможно, он уже установлен в системе - скачайте программу, если запустится, то  устанавливать ничего дополнительно не нужно.
 
-**Ссылки для скачки:**
+**Ссылки для скачивания:**
 
  1. [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48 "Домашняя страница (English)")
     * [Веб-установщик](https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-web-installer "Скачать веб-установщик")
