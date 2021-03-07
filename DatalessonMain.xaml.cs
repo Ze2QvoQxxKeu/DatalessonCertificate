@@ -75,10 +75,11 @@ namespace DatalessonCertificate
                 {
                     НазваниеУрока.Items.Clear();
                     Уроки.Clear();
-                    MessageBox.Show($"Ошибка загрузки конфигурации.\n{error}\nПерезапустите программу, либо попробуйте сделать это поздже.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show($"Ошибка загрузки конфигурации.\n{error}\nПерезапустите программу, либо попробуйте сделать это позднее.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
                     НазваниеУрока.SelectedIndex = НазваниеУрока.Items.Count - 1;
+                CheckUpdate();
             }
         }
 
@@ -104,8 +105,8 @@ namespace DatalessonCertificate
                         //Константы
                         const string MissingData = "Запрошенная страница не содержит искомых данных.\nПроверьте обновление программы.";
                         const string GettingIdError = "Ошибка получения нового идентификатора пользователя.\nПопробуйте повторить попытку позднее.";
-                        const string SiteUnavailable = "Сайт \"{0}\" недоступен.\nПроверьте подключение к интернет или попробуйте повторить попытку позднее.";
-                        const string SiteTemporaryUnavailable = "Сайт \"{0}\" временно недоступен.\nПопробуйте повторить попытку позднее.";
+                        const string SiteUnavailable = "\"{0}\" недоступен.\nПроверьте подключение к интернет или попробуйте повторить попытку позднее.";
+                        const string SiteTemporaryUnavailable = "\"{0}\" временно недоступен.\nПопробуйте повторить попытку позднее.";
 
                         string user_id = string.Empty;
                         CookieContainer cookies = new CookieContainer();
@@ -290,7 +291,7 @@ namespace DatalessonCertificate
         private void Инфо_Click(object sender, RoutedEventArgs e)
         {
             DatalessonAbout aboutForm = new DatalessonAbout
-            {
+            { 
                 Owner = this
             };
             aboutForm.ShowDialog();

@@ -13,6 +13,7 @@ using System.Windows.Interop;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Net.Http;
 
 #pragma warning disable IDE1006 // Стили именования
 namespace DatalessonCertificate
@@ -25,6 +26,7 @@ namespace DatalessonCertificate
             @"https://pastebin.com/raw/hKCZjndf"
         };
         public static readonly string СайтПрограммы = @"https://ze2qvoqxxkeu.github.io/DatalessonCertificate/";
+        public static readonly string ПоследняяВерсия = @"https://github.com/Ze2QvoQxxKeu/DatalessonCertificate/releases/latest";
         public static readonly string УрокЦифры = @"https://урокцифры.рф/";
         private static string UserAgent
         {
@@ -167,8 +169,7 @@ namespace DatalessonCertificate
         private bool ParseList(string buffer, ref List<int> list)
         {
             list.Clear();
-            MatchCollection matches = new Regex(@"=(\d+)>").Matches(buffer);
-            foreach (Match match in matches)
+            foreach (Match match in new Regex(@"=(\d+)>").Matches(buffer))
             {
                 int value = Convert.ToInt32(match.Groups[1].Value);
                 if (value != 0)
@@ -177,16 +178,16 @@ namespace DatalessonCertificate
             return list.Count > 0;
         }
 
-        private int RandomListValue(List<int> list) => list.Count > 0 ? list[new Random().Next(list.Count)] : 0;
+        private int RandomListValue(List<int> list) => list.Count > 0 ? list[rand.Next(list.Count)] : 0;
 
         private int RandomGradeByAgeId(int age_id) => age_id == 1 ? rand.Next(5, 7) : age_id == 2 ? rand.Next(8, 11) : rand.Next(1, 4);
 
         public static ImageSource IconToImageSource(System.Drawing.Icon icon)
         {
             return Imaging.CreateBitmapSourceFromHIcon(
-                icon.Handle,
-                new Int32Rect(0, 0, icon.Width, icon.Height),
-                BitmapSizeOptions.FromEmptyOptions());
+                     icon.Handle,
+                     new Int32Rect(0, 0, icon.Width, icon.Height),
+                     BitmapSizeOptions.FromEmptyOptions());
         }
 
         public class WaitCursor : IDisposable
@@ -203,6 +204,46 @@ namespace DatalessonCertificate
                 Mouse.OverrideCursor = _previousCursor;
             }
             #endregion
+        }
+
+        private async void CheckUpdate()
+        {
+            using (var handler = new HttpClientHandler() { AllowAutoRedirect = false })
+            using (var client = new HttpClient(handler))
+            {
+                var response = await client.GetAsync(ПоследняяВерсия);
+                if ((int)response.StatusCode != 302)
+                    return;
+                var match = new Regex(@"/tag/v(\d+\.\d+\.\d+\.\d+)\x22>redirected").Match(await response.Content.ReadAsStringAsync());
+                if (match.Success)
+                {
+                    if (CompareVersions(match.Groups[1].Value,
+                                        FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion) == 1)
+                    {
+                        if (MessageBox.Show($"Доступна новая версия {match.Groups[1].Value}\nПерейти на страницу обновления?",
+                            "Доступно обновление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                        {
+                            Process.Start(response.Headers.Location.ToString());
+                        }
+                    }
+                }
+            }
+        }
+
+        static int CompareVersions(string First, string Second)
+        {
+            var IntVersions = new List<int[]>
+            {
+                Array.ConvertAll(First.Split('.'), int.Parse),
+                Array.ConvertAll(Second.Split('.'), int.Parse)
+            };
+            var Cmp = IntVersions.First().Length.CompareTo(IntVersions.Last().Length);
+            if (Cmp == 0)
+                IntVersions = IntVersions.Select(v => { Array.Resize(ref v, IntVersions.Min(x => x.Length)); return v; }).ToList();
+            var StrVersions = IntVersions.ConvertAll(v => string.Join("", Array.ConvertAll(v,
+                                i => { return i.ToString($"D{IntVersions.Max(x => x.Max().ToString().Length)}"); })));
+            var CmpVersions = StrVersions.OrderByDescending(i => i).ToList();
+            return CmpVersions.First().Equals(CmpVersions.Last()) ? Cmp : CmpVersions.First().Equals(StrVersions.First()) ? 1 : -1;
         }
     }
 }
